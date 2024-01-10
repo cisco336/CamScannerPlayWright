@@ -22,14 +22,14 @@ test("has title", async ({ page, context }) => {
     });
     await page.goto("file/manager");
     
-    // await page.getByPlaceholder("Please enter your email/phone").type("email");
-    // await page.getByText("Sign in").click({ force: true });
-    // await page
-    // .getByPlaceholder("Please enter password")
-    // .type("passwd");
-    // await page.getByText("Sign in").click({ force: true });
-    // await page.getByText("My document").click({ force: true });
-    // await page.waitForTimeout(3000);
+    await page.getByPlaceholder("Please enter your email/phone").type("email");
+    await page.getByText("Sign in").click({ force: true });
+    await page
+    .getByPlaceholder("Please enter password")
+    .type("passwd");
+    await page.getByText("Sign in").click({ force: true });
+    await page.getByText("My document").click({ force: true });
+    await page.waitForTimeout(3000);
     const rows = await page.locator(".files_row");
 
     for (let i = 0; i < await rows.count(); i++) {
